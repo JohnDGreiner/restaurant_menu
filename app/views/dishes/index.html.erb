@@ -2,6 +2,11 @@
 
 <h1>Listing Dishes</h1>
 
+
+<table>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
 <table>
   <thead>
     <tr>
@@ -15,23 +20,21 @@
 
   <tbody>
     <% @dishes.each do |dish| %>
-      <tr>
-        <td><%= link_to dish.name, edit_dish_path(dish) %></td>
-        <td><%= dish.description %></td>
-        <td><%= dish.price %></td>
-      </tr>
+      <% if dish.course_id == course.id %>
+        <tr>
+          <td><%= link_to dish.name, edit_dish_path(dish) %></td>
+          <td><%= dish.description %></td>
+          <td><%= dish.price %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<table>
-  <% @courses.each do |course| %>
-    <tr>
-      <td><%= course.name %></td>
-    </tr>
-  <% end %>
+</tr>
 </table>
 
-<%= link_to 'New Dish', new_dish_path %>
+<div> <%= link_to 'New dish', new_dish_path %> </div>
+
+  <% end %>
