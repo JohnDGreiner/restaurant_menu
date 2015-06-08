@@ -32,6 +32,8 @@ gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'bootstrap-sass', '~> 3.3.4.1'
+
 group :production do
   gem 'pg'
   gem 'puma'
