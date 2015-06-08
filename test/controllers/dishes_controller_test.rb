@@ -18,7 +18,7 @@ class DishesControllerTest < ActionController::TestCase
 
   test "should create dish" do
     assert_difference('Dish.count') do
-      post :create, dish: { course_id: @dish.course_id, description: @dish.description, name: @dish.name, price: @dish.price }
+      post :create, dish: { course_id: 1, description: "Test Dish", name: "Good Food", price: 100.99 }
     end
 
     assert_redirected_to dish_path(assigns(:dish))
