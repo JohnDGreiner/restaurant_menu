@@ -30,4 +30,12 @@
 
 <br>
 
+<table>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.name %></td>
+    </tr>
+  <% end %>
+</table>
+
 <%= link_to 'New Dish', new_dish_path %>
