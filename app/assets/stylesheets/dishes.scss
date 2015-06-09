@@ -4,9 +4,10 @@
 
 $color: #A37852;
 
-#course_header{
-  font-size: 12px;
-  font-weight: bold;
+#course_header {
+  color: $color;
+  font-size: 22px;
+  font-style: oblique;
 }
 
 .row span{
@@ -21,4 +22,20 @@ $color: #A37852;
 .navbar-header h1{
   color:$color;
 
+}
+
+.navbar-default {
+    background-color: #EDEEF2;
+    border-color: $color;
+}
+
+.input_form{
+  height: 250px;
+  width: 300px;
+  border: solid 1px $color;
+  padding: 10px 10px 10px 10px;
+  align: center;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
