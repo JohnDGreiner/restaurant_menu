@@ -1,40 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Dishes</h1>
-
-
-<table>
-  <% @courses.each do |course| %>
-    <tr>
-      <td><%= course.name %></td>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Course</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<% @courses.each do |course| %>
+  <div class="row">
+    <%= course.name %>
+    <br></br>
+  </div>
     <% @dishes.each do |dish| %>
       <% if dish.course_id == course.id %>
-        <tr>
-          <td><%= link_to dish.name, edit_dish_path(dish) %></td>
-          <td><%= dish.description %></td>
-          <td><%= dish.price %></td>
-        </tr>
+        <div class="row">
+          <div class="col-md-2">
+            <%= link_to dish.name, edit_dish_path(dish) %>
+          </div>
+          <div class="col-md-5">
+            <%= dish.description %>
+          </div>
+          <div class="col-md-5">
+            <%= number_to_currency(dish.price) %>
+          </div>
+        </div>
+        <br>
       <% end %>
     <% end %>
-  </tbody>
-</table>
+    <p>
+      <%= link_to "New Dish", new_dish_path(course_id: course.id), :class => "btn btn-primary btn-xs" %>
+    </p>
 
-<br>
-</tr>
-</table>
-
-<div> <%= link_to 'New dish', new_dish_path(course_id: course.id) %> </div>
-
-  <% end %>
+<% end %>
