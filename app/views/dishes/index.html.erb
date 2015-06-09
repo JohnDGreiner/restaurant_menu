@@ -2,27 +2,27 @@
 
 <% @courses.each do |course| %>
   <div class="row">
-    <%= course.name %>
+    <span class="lead"><%= course.name %></span>
     <br></br>
   </div>
-    <% @dishes.each do |dish| %>
-      <% if dish.course_id == course.id %>
-        <div class="row">
-          <div class="col-md-2">
-            <%= link_to dish.name, edit_dish_path(dish) %>
-          </div>
-          <div class="col-md-5">
-            <%= dish.description %>
-          </div>
-          <div class="col-md-5">
-            <%= number_to_currency(dish.price) %>
-          </div>
+  <% @dishes.each do |dish| %>
+    <% if dish.course_id == course.id %>
+      <div class="row">
+        <div class="col-md-2">
+          <%= link_to dish.name, edit_dish_path(dish) %>
         </div>
-        <br>
-      <% end %>
+        <div class="col-md-5">
+          <span><%= dish.description %></span>
+        </div>
+        <div class="col-md-5">
+          <%= number_to_currency(dish.price) %>
+        </div>
+      </div>
+      <br>
     <% end %>
-    <p>
-      <%= link_to "New Dish", new_dish_path(course_id: course.id), :class => "btn btn-primary btn-xs" %>
-    </p>
-
+  <% end %>
+  <p>
+    <%= link_to "New Dish", new_dish_path(course_id: course.id), :class => "btn btn-primary btn-xs" %>
+  </p>
+  <br></br>
 <% end %>
