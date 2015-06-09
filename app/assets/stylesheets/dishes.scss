@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$color: #A37852;
+
 #course_header{
   font-size: 12px;
   font-weight: bold;
@@ -9,4 +11,14 @@
 
 .row span{
   font-style: italic;
+}
+
+.course_pic {
+  height: 200px;
+  width: 300px;
+}
+
+.navbar-header h1{
+  color:$color;
+
 }
